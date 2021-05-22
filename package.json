@@ -6,9 +6,8 @@
   "private": true,
   "scripts": {
     "start": "electron .",
-    "build": "tsc && webpack",
-    "build:webpack": "webpack",
-    "build:tsc": "tsc"
+    "build": "webpack",
+    "build:webpack": "webpack"
   },
   "keywords": [],
   "author": "",
