@@ -1,6 +1,13 @@
-import { GoldenLayout } from "./goldenLayoutBundle/bundle/esm/golden-layout.js";
+"use strict";
+//import type {GoldenLayout, LayoutConfig} from '../golden-layout/golden-layout'
 window.addEventListener("load", () => {
-    let glMain = new GoldenLayout();
+    //let t:any = (window as any).myTest
+    //console.log(t)
+    let gl_from_browser = window.goldenLayout;
+    console.log(gl_from_browser);
+    console.log("test");
+    let glMain = new gl_from_browser.GoldenLayout;
+    console.log(glMain);
     let layoutConfigForGoldenLayout = {
         root: {
             type: "row",
@@ -48,13 +55,10 @@ window.addEventListener("load", () => {
     glMain.registerComponentFactoryFunction("test 4", (container, itemConfig) => {
         //console.log(container)
         let el = document.createElement("h1");
-        el.textContent = "This is a test 4  JIRKA";
+        el.textContent = "letzter Test ich schreibe mal irgendetwas hier";
         container.element.append(el);
         console.log("add entry");
     });
     glMain.loadLayout(layoutConfigForGoldenLayout);
     console.log(glMain);
 });
-function sayHello() {
-    console.log("Hello");
-}
