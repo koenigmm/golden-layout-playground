@@ -1,9 +1,8 @@
-const {app, BrowserWindow, ipcMain} = require('electron');
-const path = require('path');
-
-let mainWindow: Electron.BrowserWindow;
-
-function createBrowserWindow(): void {
+"use strict";
+var _a = require('electron'), app = _a.app, BrowserWindow = _a.BrowserWindow, ipcMain = _a.ipcMain;
+var path = require('path');
+var mainWindow;
+function createBrowserWindow() {
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 720,
@@ -15,13 +14,9 @@ function createBrowserWindow(): void {
             contextIsolation: false
         }
     });
-
-    mainWindow.loadFile("./index.html");
+    mainWindow.loadFile("./app/index.html");
 }
-
-app.whenReady().then(() => {
+app.whenReady().then(function () {
     createBrowserWindow();
-    mainWindow.webContents.openDevTools()
-})
-
-
+    mainWindow.webContents.openDevTools();
+});

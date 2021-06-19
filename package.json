@@ -2,7 +2,7 @@
   "name": "golden_layout_playground",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "electron/main.js",
   "private": true,
   "scripts": {
     "start": "electron .",
