@@ -1,4 +1,7 @@
-const {app, BrowserWindow, ipcMain} = require('electron');
+//const {app, BrowserWindow, ipcMain} = require('electron');
+
+import { app, BrowserWindow } from "electron";
+
 const path = require('path');
 
 let mainWindow: Electron.BrowserWindow;

@@ -1,9 +1,11 @@
 "use strict";
-var _a = require('electron'), app = _a.app, BrowserWindow = _a.BrowserWindow, ipcMain = _a.ipcMain;
+//const {app, BrowserWindow, ipcMain} = require('electron');
+Object.defineProperty(exports, "__esModule", { value: true });
+var electron_1 = require("electron");
 var path = require('path');
 var mainWindow;
 function createBrowserWindow() {
-    mainWindow = new BrowserWindow({
+    mainWindow = new electron_1.BrowserWindow({
         width: 1280,
         height: 720,
         title: "Golden Layout Test",
@@ -16,7 +18,8 @@ function createBrowserWindow() {
     });
     mainWindow.loadFile("./app/index.html");
 }
-app.whenReady().then(function () {
+electron_1.app.whenReady().then(function () {
     createBrowserWindow();
     mainWindow.webContents.openDevTools();
 });
+//# sourceMappingURL=main.js.map
