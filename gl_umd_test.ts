@@ -1,4 +1,5 @@
-//import type {GoldenLayout, LayoutConfig} from '../golden-layout/golden-layout'
+// Bei Bedarf unteren Kommentar entferenen
+//import type{ GoldenLayout, LayoutConfig } from "./goldenLayoutBundle/types";
 
 window.addEventListener("load", () => {
     //let t:any = (window as any).myTest
@@ -6,10 +7,10 @@ window.addEventListener("load", () => {
 
     let gl_from_browser: any = (window as any).goldenLayout;
     console.log(gl_from_browser);
-    let glMain: any = new gl_from_browser.GoldenLayout;
+    let glMain: GoldenLayout = new gl_from_browser.GoldenLayout;
     console.log(glMain);
 
-    let layoutConfigForGoldenLayout = {
+    let layoutConfigForGoldenLayout: LayoutConfig = {
         root: {
             type: "row",
             content: [

@@ -1,11 +1,11 @@
 "use strict";
-//import type {GoldenLayout, LayoutConfig} from '../golden-layout/golden-layout'
+// Bei Bedarf unteren Kommentar entferenen
+//import type{ GoldenLayout, LayoutConfig } from "./goldenLayoutBundle/types";
 window.addEventListener("load", () => {
     //let t:any = (window as any).myTest
     //console.log(t)
     let gl_from_browser = window.goldenLayout;
     console.log(gl_from_browser);
-    console.log("test");
     let glMain = new gl_from_browser.GoldenLayout;
     console.log(glMain);
     let layoutConfigForGoldenLayout = {
