@@ -1,5 +1,4 @@
 import { GoldenLayout } from "../goldenLayoutBundle/bundle/esm/golden-layout.js";
-import { Person, Tester, FARBEN } from '../ClassesForBarrelTest/barrel.js';
 function BarrelTest() {
     var p1 = new Person(170, "Person_test");
     p1.color = FARBEN.SERENITY;
