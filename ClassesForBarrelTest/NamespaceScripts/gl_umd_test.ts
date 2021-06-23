@@ -1,11 +1,4 @@
-/// <reference path="./ClassesForBarrelTest/ts/Color.ts" />
-/// <reference path="./ClassesForBarrelTest/ts/person.ts" />
-/// <reference path="./ClassesForBarrelTest/ts/tester.ts" />
-
-// Bei Bedarf unteren Kommentar entferenen
-import type { GoldenLayout, LayoutConfig } from "./goldenLayoutBundle/types";
 //import { GoldenLayout, LayoutConfig } from "./goldenLayoutBundle/types";
-
 namespace TestWithImport {
     window.addEventListener("load", () => {
 
