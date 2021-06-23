@@ -1,6 +1,6 @@
 
 /** @public */
-export declare class ApiError extends ExternalError {
+declare class ApiError extends ExternalError {
     /* Excluded from this release type: __constructor */
 }
 
@@ -17,7 +17,7 @@ export declare class ApiError extends ExternalError {
  *      and use it instead of the provided configuration
  * @public
  */
-export declare class BrowserPopout extends EventEmitter {
+declare class BrowserPopout extends EventEmitter {
     /* Excluded from this release type: _config */
     /* Excluded from this release type: _initialWindowSize */
     /* Excluded from this release type: _layoutManager */
@@ -49,7 +49,7 @@ export declare class BrowserPopout extends EventEmitter {
 }
 
 /** @public */
-export declare class ComponentContainer extends EventEmitter {
+declare class ComponentContainer extends EventEmitter {
     /* Excluded from this release type: _config */
     /* Excluded from this release type: _parent */
     /* Excluded from this release type: _layoutManager */
@@ -157,8 +157,8 @@ export declare class ComponentContainer extends EventEmitter {
 }
 
 /** @public */
-export declare namespace ComponentContainer {
-    export type StateRequestEventHandler = (this: void) => JsonValue | undefined;
+declare namespace ComponentContainer {
+    type StateRequestEventHandler = (this: void) => JsonValue | undefined;
     /* Excluded from this release type: ShowEventHandler */
     /* Excluded from this release type: HideEventHandler */
     /* Excluded from this release type: FocusEventHandler */
@@ -167,7 +167,7 @@ export declare namespace ComponentContainer {
 }
 
 /** @public */
-export declare class ComponentItem extends ContentItem {
+declare class ComponentItem extends ContentItem {
     /* Excluded from this release type: _parentItem */
     /* Excluded from this release type: _reorderEnabled */
     /* Excluded from this release type: _headerConfig */
@@ -221,12 +221,12 @@ export declare class ComponentItem extends ContentItem {
 }
 
 /** @public */
-export declare namespace ComponentItem {
-    export type Component = unknown;
+declare namespace ComponentItem {
+    type Component = unknown;
 }
 
 /** @public */
-export declare interface ComponentItemConfig extends HeaderedItemConfig {
+declare interface ComponentItemConfig extends HeaderedItemConfig {
     type: 'component';
     readonly content?: [];
     /**
@@ -255,9 +255,9 @@ export declare interface ComponentItemConfig extends HeaderedItemConfig {
 }
 
 /** @public */
-export declare namespace ComponentItemConfig {
-    export function resolve(itemConfig: ComponentItemConfig): ResolvedComponentItemConfig;
-    export function componentTypeToTitle(componentType: JsonValue): string;
+declare namespace ComponentItemConfig {
+    function resolve(itemConfig: ComponentItemConfig): ResolvedComponentItemConfig;
+    function componentTypeToTitle(componentType: JsonValue): string;
 }
 
 declare abstract class ComponentParentableItem extends ContentItem {
@@ -268,10 +268,10 @@ declare abstract class ComponentParentableItem extends ContentItem {
 }
 
 /** @public @deprecated - use {@link (LayoutConfig:interface)} */
-export declare type Config = LayoutConfig;
+declare type Config = LayoutConfig;
 
 /** @public */
-export declare class ConfigurationError extends ExternalError {
+declare class ConfigurationError extends ExternalError {
     readonly node?: string | undefined;
     /* Excluded from this release type: __constructor */
 }
@@ -283,7 +283,7 @@ export declare class ConfigurationError extends ExternalError {
  * It also provides a number of functions for tree traversal
  * @public
  */
-export declare abstract class ContentItem extends EventEmitter {
+declare abstract class ContentItem extends EventEmitter {
     readonly layoutManager: LayoutManager;
     /* Excluded from this release type: _parent */
     /* Excluded from this release type: _element */
@@ -365,7 +365,7 @@ export declare abstract class ContentItem extends EventEmitter {
 }
 
 /** @public */
-export declare namespace ContentItem {
+declare namespace ContentItem {
     /* Excluded from this release type: Area */
 }
 
@@ -376,7 +376,7 @@ export declare namespace ContentItem {
  * start to be dragged into the Layout
  * @public
  */
-export declare class DragSource {
+declare class DragSource {
     /* Excluded from this release type: _layoutManager */
     /* Excluded from this release type: _element */
     /* Excluded from this release type: _extraAllowableChildTargets */
@@ -395,8 +395,8 @@ export declare class DragSource {
 }
 
 /** @public */
-export declare namespace DragSource {
-    export interface ComponentItemConfig {
+declare namespace DragSource {
+    interface ComponentItemConfig {
         type: JsonValue;
         state?: JsonValue;
         title?: string;
@@ -410,7 +410,7 @@ export declare namespace DragSource {
  * {@link (EventEmitter:namespace).ALL_EVENT} event for every event triggered. This allows to hook into it and proxy events forwards
  * @public
  */
-export declare class EventEmitter {
+declare class EventEmitter {
     /* Excluded from this release type: _allEventSubscriptions */
     /* Excluded from this release type: _subscriptionsMap */
     tryBubbleEvent(name: string, args: unknown[]): void;
@@ -454,7 +454,7 @@ export declare class EventEmitter {
 }
 
 /** @public */
-export declare namespace EventEmitter {
+declare namespace EventEmitter {
     /**
      * The name of the event that's triggered for every event
      */
@@ -462,8 +462,8 @@ export declare namespace EventEmitter {
     const headerClickEventName = "stackHeaderClick";
     const headerTouchStartEventName = "stackHeaderTouchStart";
     /* Excluded from this release type: UnknownCallback */
-    export type Callback<K extends keyof EventEmitter.EventParamsMap> = (this: void, ...args: EventParamsMap[K]) => void;
-    export interface EventParamsMap {
+    type Callback<K extends keyof EventEmitter.EventParamsMap> = (this: void, ...args: EventParamsMap[K]) => void;
+    interface EventParamsMap {
         "__all": UnknownParams;
         "activeContentItemChanged": ComponentItemParam;
         "close": NoParams;
@@ -499,21 +499,21 @@ export declare namespace EventEmitter {
         "stackHeaderTouchStart": TouchStartBubblingEventParam;
         "userBroadcast": UnknownParams;
     }
-    export type UnknownParams = unknown[];
-    export type NoParams = [];
-    export type UnknownParam = [unknown];
-    export type PopoutParam = [BrowserPopout];
-    export type ComponentItemParam = [ComponentItem];
-    export type TabParam = [Tab];
-    export type BubblingEventParam = [EventEmitter.BubblingEvent];
-    export type StringParam = [string];
-    export type DragStartParams = [originalX: number, originalY: number];
-    export type DragStopParams = [event: PointerEvent | undefined];
-    export type DragParams = [offsetX: number, offsetY: number, event: PointerEvent];
-    export type BeforeComponentReleaseParams = [component: unknown];
-    export type ClickBubblingEventParam = [ClickBubblingEvent];
-    export type TouchStartBubblingEventParam = [TouchStartBubblingEvent];
-    export class BubblingEvent {
+    type UnknownParams = unknown[];
+    type NoParams = [];
+    type UnknownParam = [unknown];
+    type PopoutParam = [BrowserPopout];
+    type ComponentItemParam = [ComponentItem];
+    type TabParam = [Tab];
+    type BubblingEventParam = [EventEmitter.BubblingEvent];
+    type StringParam = [string];
+    type DragStartParams = [originalX: number, originalY: number];
+    type DragStopParams = [event: PointerEvent | undefined];
+    type DragParams = [offsetX: number, offsetY: number, event: PointerEvent];
+    type BeforeComponentReleaseParams = [component: unknown];
+    type ClickBubblingEventParam = [ClickBubblingEvent];
+    type TouchStartBubblingEventParam = [TouchStartBubblingEvent];
+    class BubblingEvent {
         /* Excluded from this release type: _name */
         /* Excluded from this release type: _target */
         /* Excluded from this release type: _isPropagationStopped */
@@ -525,12 +525,12 @@ export declare namespace EventEmitter {
         /* Excluded from this release type: __constructor */
         stopPropagation(): void;
     }
-    export class ClickBubblingEvent extends BubblingEvent {
+    class ClickBubblingEvent extends BubblingEvent {
         /* Excluded from this release type: _mouseEvent */
         get mouseEvent(): MouseEvent;
         /* Excluded from this release type: __constructor */
     }
-    export class TouchStartBubblingEvent extends BubblingEvent {
+    class TouchStartBubblingEvent extends BubblingEvent {
         /* Excluded from this release type: _touchEvent */
         get touchEvent(): TouchEvent;
         /* Excluded from this release type: __constructor */
@@ -554,7 +554,7 @@ export declare namespace EventEmitter {
  *
  * @public
  */
-export declare class EventHub extends EventEmitter {
+declare class EventHub extends EventEmitter {
     /* Excluded from this release type: _layoutManager */
     /* Excluded from this release type: _childEventListener */
     /* Excluded from this release type: __constructor */
@@ -579,20 +579,20 @@ export declare class EventHub extends EventEmitter {
 }
 
 /** @public */
-export declare namespace EventHub {
+declare namespace EventHub {
     /* Excluded from this release type: ChildEventName */
     /* Excluded from this release type: ChildEventDetail */
     /* Excluded from this release type: ChildEventInit */
 }
 
 /** @public */
-export declare abstract class ExternalError extends Error {
+declare abstract class ExternalError extends Error {
     readonly type: string;
     /* Excluded from this release type: __constructor */
 }
 
 /** @public */
-export declare class GoldenLayout extends LayoutManager {
+declare class GoldenLayout extends LayoutManager {
     /* Excluded from this release type: _subWindowsCreated */
     /* Excluded from this release type: _creationTimeoutPassed */
     /**
@@ -618,7 +618,7 @@ export declare class GoldenLayout extends LayoutManager {
 }
 
 /** @public */
-export declare namespace GoldenLayout {
+declare namespace GoldenLayout {
     /* Excluded from this release type: createConfig */
 }
 
@@ -628,7 +628,7 @@ export declare namespace GoldenLayout {
  * This class represents a header above a Stack ContentItem.
  * @public
  */
-export declare class Header extends EventEmitter {
+declare class Header extends EventEmitter {
     /* Excluded from this release type: _layoutManager */
     /* Excluded from this release type: _parent */
     /* Excluded from this release type: _configClosable */
@@ -708,7 +708,7 @@ export declare class Header extends EventEmitter {
 }
 
 /** @public */
-export declare namespace Header {
+declare namespace Header {
     /* Excluded from this release type: GetActiveComponentItemEvent */
     /* Excluded from this release type: CloseEvent */
     /* Excluded from this release type: PopoutEvent */
@@ -723,7 +723,7 @@ export declare namespace Header {
 }
 
 /** @public */
-export declare interface HeaderedItemConfig extends ItemConfig {
+declare interface HeaderedItemConfig extends ItemConfig {
     /** @deprecated use {@link (HeaderedItemConfig:namespace).(Header:interface).show} instead */
     hasHeaders?: boolean;
     header?: HeaderedItemConfig.Header;
@@ -731,8 +731,8 @@ export declare interface HeaderedItemConfig extends ItemConfig {
 }
 
 /** @public */
-export declare namespace HeaderedItemConfig {
-    export interface Header {
+declare namespace HeaderedItemConfig {
+    interface Header {
         show?: false | Side;
         popout?: false | string;
         dock?: false | string;
@@ -741,17 +741,17 @@ export declare namespace HeaderedItemConfig {
         minimise?: string;
         tabDropdown?: false | string;
     }
-    export namespace Header {
-        export function resolve(header: Header | undefined, hasHeaders: boolean | undefined): ResolvedHeaderedItemConfig.Header | undefined;
+    namespace Header {
+        function resolve(header: Header | undefined, hasHeaders: boolean | undefined): ResolvedHeaderedItemConfig.Header | undefined;
     }
-    export function resolveIdAndMaximised(config: HeaderedItemConfig): {
+    function resolveIdAndMaximised(config: HeaderedItemConfig): {
         id: string;
         maximised: boolean;
     };
 }
 
 /** @public */
-export declare const enum I18nStringId {
+declare const enum I18nStringId {
     PopoutCannotBeCreatedWithGroundItemConfig = 0,
     PleaseRegisterAConstructorFunction = 1,
     ComponentIsAlreadyRegistered = 2,
@@ -759,16 +759,16 @@ export declare const enum I18nStringId {
 }
 
 /** @public */
-export declare namespace I18nStrings {
+declare namespace I18nStrings {
     const idCount: number;
-    export function checkInitialise(): void;
+    function checkInitialise(): void;
 }
 
 /** @public */
-export declare const i18nStrings: string[];
+declare const i18nStrings: string[];
 
 /** @public */
-export declare interface ItemConfig {
+declare interface ItemConfig {
     /**
      * The type of the item. Possible values are 'row', 'column', 'stack', 'component'.
      */
@@ -815,22 +815,22 @@ export declare interface ItemConfig {
 }
 
 /** @public */
-export declare namespace ItemConfig {
-    export function resolve(itemConfig: ItemConfig): ResolvedItemConfig;
-    export function resolveContent(content: ItemConfig[] | undefined): ResolvedItemConfig[];
-    export function resolveId(id: string | string[] | undefined): string;
-    export function isGround(config: ItemConfig): config is ItemConfig;
-    export function isRow(config: ItemConfig): config is ItemConfig;
-    export function isColumn(config: ItemConfig): config is ItemConfig;
-    export function isStack(config: ItemConfig): config is ItemConfig;
-    export function isComponent(config: ItemConfig): config is ComponentItemConfig;
+declare namespace ItemConfig {
+    function resolve(itemConfig: ItemConfig): ResolvedItemConfig;
+    function resolveContent(content: ItemConfig[] | undefined): ResolvedItemConfig[];
+    function resolveId(id: string | string[] | undefined): string;
+    function isGround(config: ItemConfig): config is ItemConfig;
+    function isRow(config: ItemConfig): config is ItemConfig;
+    function isColumn(config: ItemConfig): config is ItemConfig;
+    function isStack(config: ItemConfig): config is ItemConfig;
+    function isComponent(config: ItemConfig): config is ComponentItemConfig;
 }
 
 /** @public */
-export declare type ItemType = 'ground' | 'row' | 'column' | 'stack' | 'component';
+declare type ItemType = 'ground' | 'row' | 'column' | 'stack' | 'component';
 
 /** @public */
-export declare namespace ItemType {
+declare namespace ItemType {
     const ground = "ground";
     const row = "row";
     const column = "column";
@@ -839,24 +839,24 @@ export declare namespace ItemType {
 }
 
 /** @public */
-export declare interface Json {
+declare interface Json {
     [name: string]: JsonValue;
 }
 
 /** @public */
-export declare type JsonValue = string | number | boolean | null | Json | object | JsonValueArray;
+declare type JsonValue = string | number | boolean | null | Json | object | JsonValueArray;
 
 /** @public */
-export declare namespace JsonValue {
-    export function isJson(value: JsonValue): value is Json;
-    export function isJsonObject(value: JsonValue): value is Json | object;
+declare namespace JsonValue {
+    function isJson(value: JsonValue): value is Json;
+    function isJsonObject(value: JsonValue): value is Json | object;
 }
 
 /** @public */
-export declare type JsonValueArray = Array<JsonValue>;
+declare type JsonValueArray = Array<JsonValue>;
 
 /** @public */
-export declare interface LayoutConfig {
+declare interface LayoutConfig {
     root: RootItemConfig;
     /** @deprecated Use {@link (LayoutConfig:interface).root} */
     content?: (RowOrColumnItemConfig | StackItemConfig | ComponentItemConfig)[];
@@ -873,8 +873,8 @@ export declare interface LayoutConfig {
  * Note that LayoutConfig should be used for serialisation (not LayoutConfig)
  * @public
  */
-export declare namespace LayoutConfig {
-    export interface Settings {
+declare namespace LayoutConfig {
+    interface Settings {
         /**
          * @deprecated use ${@link (LayoutConfig:namespace).(Header:interface).show} instead
          */
@@ -950,10 +950,10 @@ export declare namespace LayoutConfig {
          */
         popInOnClose?: boolean;
     }
-    export namespace Settings {
-        export function resolve(settings: Settings | undefined): ResolvedLayoutConfig.Settings;
+    namespace Settings {
+        function resolve(settings: Settings | undefined): ResolvedLayoutConfig.Settings;
     }
-    export interface Dimensions {
+    interface Dimensions {
         /**
          * The width of the borders between the layout items in pixel. Please note: The actual draggable area is wider
          * than the visible one, making it safe to set this to small values without affecting usability.
@@ -991,10 +991,10 @@ export declare namespace LayoutConfig {
          */
         dragProxyHeight?: number;
     }
-    export namespace Dimensions {
-        export function resolve(dimensions: Dimensions | undefined): ResolvedLayoutConfig.Dimensions;
+    namespace Dimensions {
+        function resolve(dimensions: Dimensions | undefined): ResolvedLayoutConfig.Dimensions;
     }
-    export interface Labels {
+    interface Labels {
         /**
          * @deprecated use {@link (LayoutConfig:namespace).(Header:interface).close} instead
          */
@@ -1020,7 +1020,7 @@ export declare namespace LayoutConfig {
          */
         tabDropdown?: string;
     }
-    export interface Header {
+    interface Header {
         /**
          * Specifies whether header should be displayed, and if so, on which side.
          * If false, the layout will be displayed with splitters only.
@@ -1058,21 +1058,21 @@ export declare namespace LayoutConfig {
          */
         tabDropdown?: string;
     }
-    export namespace Header {
-        export function resolve(header: Header | undefined, settings: LayoutConfig.Settings | undefined, labels: LayoutConfig.Labels | undefined): ResolvedLayoutConfig.Header;
+    namespace Header {
+        function resolve(header: Header | undefined, settings: LayoutConfig.Settings | undefined, labels: LayoutConfig.Labels | undefined): ResolvedLayoutConfig.Header;
     }
-    export function isPopout(config: LayoutConfig): config is PopoutLayoutConfig;
-    export function resolve(layoutConfig: LayoutConfig): ResolvedLayoutConfig;
-    export function fromResolved(config: ResolvedLayoutConfig): LayoutConfig;
-    export function isResolved(configOrResolvedConfig: ResolvedLayoutConfig | LayoutConfig): configOrResolvedConfig is ResolvedLayoutConfig;
-    export function resolveOpenPopouts(popoutConfigs: PopoutLayoutConfig[] | undefined): ResolvedPopoutLayoutConfig[];
+    function isPopout(config: LayoutConfig): config is PopoutLayoutConfig;
+    function resolve(layoutConfig: LayoutConfig): ResolvedLayoutConfig;
+    function fromResolved(config: ResolvedLayoutConfig): LayoutConfig;
+    function isResolved(configOrResolvedConfig: ResolvedLayoutConfig | LayoutConfig): configOrResolvedConfig is ResolvedLayoutConfig;
+    function resolveOpenPopouts(popoutConfigs: PopoutLayoutConfig[] | undefined): ResolvedPopoutLayoutConfig[];
 }
 
 /**
  * The main class that will be exposed as GoldenLayout.
  */
 /** @public */
-export declare abstract class LayoutManager extends EventEmitter {
+declare abstract class LayoutManager extends EventEmitter {
     /* Excluded from this release type: _containerElement */
     /* Excluded from this release type: _isFullPage */
     /* Excluded from this release type: _isInitialised */
@@ -1379,17 +1379,17 @@ export declare abstract class LayoutManager extends EventEmitter {
 }
 
 /** @public */
-export declare namespace LayoutManager {
-    export type ComponentConstructor = new (container: ComponentContainer, state: JsonValue | undefined) => ComponentItem.Component;
-    export type ComponentFactoryFunction = (container: ComponentContainer, state: JsonValue | undefined) => ComponentItem.Component;
-    export type GetComponentConstructorCallback = (this: void, config: ResolvedComponentItemConfig) => ComponentConstructor;
-    export type GetComponentEventHandler = (this: void, container: ComponentContainer, itemConfig: ResolvedComponentItemConfig) => ComponentItem.Component;
-    export type ReleaseComponentEventHandler = (this: void, container: ComponentContainer, component: ComponentItem.Component) => void;
+declare namespace LayoutManager {
+    type ComponentConstructor = new (container: ComponentContainer, state: JsonValue | undefined) => ComponentItem.Component;
+    type ComponentFactoryFunction = (container: ComponentContainer, state: JsonValue | undefined) => ComponentItem.Component;
+    type GetComponentConstructorCallback = (this: void, config: ResolvedComponentItemConfig) => ComponentConstructor;
+    type GetComponentEventHandler = (this: void, container: ComponentContainer, itemConfig: ResolvedComponentItemConfig) => ComponentItem.Component;
+    type ReleaseComponentEventHandler = (this: void, container: ComponentContainer, component: ComponentItem.Component) => void;
     /* Excluded from this release type: ConstructorParameters */
-    export function createMaximisePlaceElement(document: Document): HTMLElement;
-    export function createTabDropPlaceholderElement(document: Document): HTMLElement;
+    function createMaximisePlaceElement(document: Document): HTMLElement;
+    function createTabDropPlaceholderElement(document: Document): HTMLElement;
     /** @public */
-    export interface ComponentInstantiator {
+    interface ComponentInstantiator {
         constructor: ComponentConstructor | undefined;
         factoryFunction: ComponentFactoryFunction | undefined;
     }
@@ -1398,7 +1398,7 @@ export declare namespace LayoutManager {
      * Used to specify where a new item is to be added
      * @public
      */
-    export interface Location {
+    interface Location {
         parentItem: ContentItem;
         index: number;
     }
@@ -1406,15 +1406,15 @@ export declare namespace LayoutManager {
      * A selector used to specify a unique location in the layout
      * @public
      */
-    export interface LocationSelector {
+    interface LocationSelector {
         /** Specifies selector algorithm */
         typeId: LocationSelector.TypeId;
         /** Used by algorithm to determine index in found ContentItem */
         index?: number;
     }
     /** @public */
-    export namespace LocationSelector {
-        export const enum TypeId {
+    namespace LocationSelector {
+        const enum TypeId {
             /** Stack with focused Item. Index specifies offset from index of focused item (eg 1 is the position after focused item) */
             FocusedItem = 0,
             /** Stack with focused Item. Index specfies ContentItems index */
@@ -1448,12 +1448,12 @@ export declare namespace LayoutManager {
 /* Excluded from this release type: LeftAndTop */
 
 /** @public */
-export declare class PopoutBlockedError extends ExternalError {
+declare class PopoutBlockedError extends ExternalError {
     /* Excluded from this release type: __constructor */
 }
 
 /** @public */
-export declare interface PopoutLayoutConfig extends LayoutConfig {
+declare interface PopoutLayoutConfig extends LayoutConfig {
     /** The id of the element the item will be appended to on popIn
     * If null, append to topmost layout element
     */
@@ -1468,9 +1468,9 @@ export declare interface PopoutLayoutConfig extends LayoutConfig {
 }
 
 /** @public */
-export declare namespace PopoutLayoutConfig {
+declare namespace PopoutLayoutConfig {
     /** @deprecated use {@link (PopoutLayoutConfig:namespace).(Window:interface)} */
-    export interface Dimensions extends LayoutConfig.Dimensions {
+    interface Dimensions extends LayoutConfig.Dimensions {
         /** @deprecated use {@link (PopoutLayoutConfig:namespace).(Window:interface).width} */
         width: number | null;
         /** @deprecated use {@link (PopoutLayoutConfig:namespace).(Window:interface).height} */
@@ -1480,22 +1480,22 @@ export declare namespace PopoutLayoutConfig {
         /** @deprecated use {@link (PopoutLayoutConfig:namespace).(Window:interface).top} */
         top: number | null;
     }
-    export interface Window {
+    interface Window {
         width?: number;
         height?: number;
         left?: number;
         top?: number;
     }
-    export namespace Window {
-        export function resolve(window: Window | undefined, dimensions: Dimensions | undefined): ResolvedPopoutLayoutConfig.Window;
+    namespace Window {
+        function resolve(window: Window | undefined, dimensions: Dimensions | undefined): ResolvedPopoutLayoutConfig.Window;
     }
-    export function resolve(popoutConfig: PopoutLayoutConfig): ResolvedPopoutLayoutConfig;
+    function resolve(popoutConfig: PopoutLayoutConfig): ResolvedPopoutLayoutConfig;
 }
 
 /* Excluded from this release type: Rect */
 
 /** @public */
-export declare interface ResolvedComponentItemConfig extends ResolvedHeaderedItemConfig {
+declare interface ResolvedComponentItemConfig extends ResolvedHeaderedItemConfig {
     readonly type: 'component';
     readonly content: [];
     readonly title: string;
@@ -1508,26 +1508,26 @@ export declare interface ResolvedComponentItemConfig extends ResolvedHeaderedIte
 }
 
 /** @public */
-export declare namespace ResolvedComponentItemConfig {
+declare namespace ResolvedComponentItemConfig {
     const defaultReorderEnabled = true;
     /* Excluded from this release type: resolveComponentTypeName */
-    export function createCopy(original: ResolvedComponentItemConfig): ResolvedComponentItemConfig;
-    export function createDefault(componentType?: JsonValue, componentState?: JsonValue, title?: string): ResolvedComponentItemConfig;
-    export function copyComponentType(componentType: JsonValue): JsonValue;
+    function createCopy(original: ResolvedComponentItemConfig): ResolvedComponentItemConfig;
+    function createDefault(componentType?: JsonValue, componentState?: JsonValue, title?: string): ResolvedComponentItemConfig;
+    function copyComponentType(componentType: JsonValue): JsonValue;
 }
 
 /* Excluded from this release type: ResolvedGroundItemConfig */
 
 /** @public */
-export declare interface ResolvedHeaderedItemConfig extends ResolvedItemConfig {
+declare interface ResolvedHeaderedItemConfig extends ResolvedItemConfig {
     header: ResolvedHeaderedItemConfig.Header | undefined;
     readonly maximised: boolean;
 }
 
 /** @public */
-export declare namespace ResolvedHeaderedItemConfig {
+declare namespace ResolvedHeaderedItemConfig {
     const defaultMaximised = false;
-    export interface Header {
+    interface Header {
         readonly show: false | Side | undefined;
         readonly popout: false | string | undefined;
         readonly maximise: false | string | undefined;
@@ -1535,13 +1535,13 @@ export declare namespace ResolvedHeaderedItemConfig {
         readonly minimise: string | undefined;
         readonly tabDropdown: false | string | undefined;
     }
-    export namespace Header {
-        export function createCopy(original: Header | undefined, show?: false | Side): Header | undefined;
+    namespace Header {
+        function createCopy(original: Header | undefined, show?: false | Side): Header | undefined;
     }
 }
 
 /** @public */
-export declare interface ResolvedItemConfig {
+declare interface ResolvedItemConfig {
     readonly type: ItemType;
     readonly content: readonly ResolvedItemConfig[];
     readonly width: number;
@@ -1553,18 +1553,18 @@ export declare interface ResolvedItemConfig {
 }
 
 /** @public */
-export declare namespace ResolvedItemConfig {
+declare namespace ResolvedItemConfig {
     const defaults: ResolvedItemConfig;
     /** Creates a copy of the original ResolvedItemConfig using an alternative content if specified */
-    export function createCopy(original: ResolvedItemConfig, content?: ResolvedItemConfig[]): ResolvedItemConfig;
-    export function createDefault(type: ItemType): ResolvedItemConfig;
-    export function isComponentItem(itemConfig: ResolvedItemConfig): itemConfig is ResolvedComponentItemConfig;
-    export function isStackItem(itemConfig: ResolvedItemConfig): itemConfig is ResolvedStackItemConfig;
+    function createCopy(original: ResolvedItemConfig, content?: ResolvedItemConfig[]): ResolvedItemConfig;
+    function createDefault(type: ItemType): ResolvedItemConfig;
+    function isComponentItem(itemConfig: ResolvedItemConfig): itemConfig is ResolvedComponentItemConfig;
+    function isStackItem(itemConfig: ResolvedItemConfig): itemConfig is ResolvedStackItemConfig;
     /* Excluded from this release type: isGroundItem */
 }
 
 /** @public */
-export declare interface ResolvedLayoutConfig {
+declare interface ResolvedLayoutConfig {
     readonly root: ResolvedRootItemConfig | undefined;
     readonly openPopouts: ResolvedPopoutLayoutConfig[];
     readonly dimensions: ResolvedLayoutConfig.Dimensions;
@@ -1574,8 +1574,8 @@ export declare interface ResolvedLayoutConfig {
 }
 
 /** @public */
-export declare namespace ResolvedLayoutConfig {
-    export interface Settings {
+declare namespace ResolvedLayoutConfig {
+    interface Settings {
         readonly constrainDragToContainer: boolean;
         readonly reorderEnabled: boolean;
         readonly popoutWholeStack: boolean;
@@ -1587,11 +1587,11 @@ export declare namespace ResolvedLayoutConfig {
         readonly tabControlOffset: number;
         readonly popInOnClose: boolean;
     }
-    export namespace Settings {
+    namespace Settings {
         const defaults: ResolvedLayoutConfig.Settings;
-        export function createCopy(original: Settings): Settings;
+        function createCopy(original: Settings): Settings;
     }
-    export interface Dimensions {
+    interface Dimensions {
         readonly borderWidth: number;
         readonly borderGrabWidth: number;
         readonly minItemHeight: number;
@@ -1600,11 +1600,11 @@ export declare namespace ResolvedLayoutConfig {
         readonly dragProxyWidth: number;
         readonly dragProxyHeight: number;
     }
-    export namespace Dimensions {
-        export function createCopy(original: Dimensions): Dimensions;
+    namespace Dimensions {
+        function createCopy(original: Dimensions): Dimensions;
         const defaults: ResolvedLayoutConfig.Dimensions;
     }
-    export interface Header {
+    interface Header {
         readonly show: false | Side;
         readonly popout: false | string;
         readonly dock: string;
@@ -1613,47 +1613,47 @@ export declare namespace ResolvedLayoutConfig {
         readonly close: false | string;
         readonly tabDropdown: string;
     }
-    export namespace Header {
-        export function createCopy(original: Header): Header;
+    namespace Header {
+        function createCopy(original: Header): Header;
         const defaults: ResolvedLayoutConfig.Header;
     }
-    export function isPopout(config: ResolvedLayoutConfig): config is ResolvedPopoutLayoutConfig;
-    export function createDefault(): ResolvedLayoutConfig;
-    export function createCopy(config: ResolvedLayoutConfig): ResolvedLayoutConfig;
-    export function copyOpenPopouts(original: ResolvedPopoutLayoutConfig[]): ResolvedPopoutLayoutConfig[];
+    function isPopout(config: ResolvedLayoutConfig): config is ResolvedPopoutLayoutConfig;
+    function createDefault(): ResolvedLayoutConfig;
+    function createCopy(config: ResolvedLayoutConfig): ResolvedLayoutConfig;
+    function copyOpenPopouts(original: ResolvedPopoutLayoutConfig[]): ResolvedPopoutLayoutConfig[];
     /**
      * Takes a GoldenLayout configuration object and
      * replaces its keys and values recursively with
      * one letter counterparts
      */
-    export function minifyConfig(layoutConfig: ResolvedLayoutConfig): ResolvedLayoutConfig;
+    function minifyConfig(layoutConfig: ResolvedLayoutConfig): ResolvedLayoutConfig;
     /**
      * Takes a configuration Object that was previously minified
      * using minifyConfig and returns its original version
      */
-    export function unminifyConfig(minifiedConfig: ResolvedLayoutConfig): ResolvedLayoutConfig;
+    function unminifyConfig(minifiedConfig: ResolvedLayoutConfig): ResolvedLayoutConfig;
 }
 
 /** @public */
-export declare interface ResolvedPopoutLayoutConfig extends ResolvedLayoutConfig {
+declare interface ResolvedPopoutLayoutConfig extends ResolvedLayoutConfig {
     readonly parentId: string | null;
     readonly indexInParent: number | null;
     readonly window: ResolvedPopoutLayoutConfig.Window;
 }
 
 /** @public */
-export declare namespace ResolvedPopoutLayoutConfig {
-    export interface Window {
+declare namespace ResolvedPopoutLayoutConfig {
+    interface Window {
         readonly width: number | null;
         readonly height: number | null;
         readonly left: number | null;
         readonly top: number | null;
     }
-    export namespace Window {
-        export function createCopy(original: Window): Window;
+    namespace Window {
+        function createCopy(original: Window): Window;
         const defaults: ResolvedPopoutLayoutConfig.Window;
     }
-    export function createCopy(original: ResolvedPopoutLayoutConfig): ResolvedPopoutLayoutConfig;
+    function createCopy(original: ResolvedPopoutLayoutConfig): ResolvedPopoutLayoutConfig;
 }
 
 /**
@@ -1663,18 +1663,18 @@ export declare namespace ResolvedPopoutLayoutConfig {
  * a ComponentItem itemConfig will create a Stack with a child ComponentItem.
  * @public
 */
-export declare type ResolvedRootItemConfig = ResolvedRowOrColumnItemConfig | ResolvedStackItemConfig | ResolvedComponentItemConfig;
+declare type ResolvedRootItemConfig = ResolvedRowOrColumnItemConfig | ResolvedStackItemConfig | ResolvedComponentItemConfig;
 
 /** @public */
-export declare namespace ResolvedRootItemConfig {
-    export function createCopy(config: ResolvedRootItemConfig): ResolvedRootItemConfig;
-    export function isRootItemConfig(itemConfig: ResolvedItemConfig): itemConfig is ResolvedRootItemConfig;
+declare namespace ResolvedRootItemConfig {
+    function createCopy(config: ResolvedRootItemConfig): ResolvedRootItemConfig;
+    function isRootItemConfig(itemConfig: ResolvedItemConfig): itemConfig is ResolvedRootItemConfig;
 }
 
 /** Base for Root or RowOrColumn ItemConfigs
  * @public
  */
-export declare interface ResolvedRowOrColumnItemConfig extends ResolvedItemConfig {
+declare interface ResolvedRowOrColumnItemConfig extends ResolvedItemConfig {
     readonly type: 'row' | 'column';
     /** Note that RowOrColumn ResolvedItemConfig contents, can contain ComponentItem itemConfigs.  However
      * when ContentItems are created, these ComponentItem itemConfigs will create a Stack with a child ComponentItem.
@@ -1683,16 +1683,16 @@ export declare interface ResolvedRowOrColumnItemConfig extends ResolvedItemConfi
 }
 
 /** @public */
-export declare namespace ResolvedRowOrColumnItemConfig {
-    export type ChildItemConfig = ResolvedRowOrColumnItemConfig | ResolvedStackItemConfig | ResolvedComponentItemConfig;
-    export function isChildItemConfig(itemConfig: ResolvedItemConfig): itemConfig is ChildItemConfig;
-    export function createCopy(original: ResolvedRowOrColumnItemConfig, content?: ChildItemConfig[]): ResolvedRowOrColumnItemConfig;
-    export function copyContent(original: readonly ChildItemConfig[]): ChildItemConfig[];
-    export function createDefault(type: 'row' | 'column'): ResolvedRowOrColumnItemConfig;
+declare namespace ResolvedRowOrColumnItemConfig {
+    type ChildItemConfig = ResolvedRowOrColumnItemConfig | ResolvedStackItemConfig | ResolvedComponentItemConfig;
+    function isChildItemConfig(itemConfig: ResolvedItemConfig): itemConfig is ChildItemConfig;
+    function createCopy(original: ResolvedRowOrColumnItemConfig, content?: ChildItemConfig[]): ResolvedRowOrColumnItemConfig;
+    function copyContent(original: readonly ChildItemConfig[]): ChildItemConfig[];
+    function createDefault(type: 'row' | 'column'): ResolvedRowOrColumnItemConfig;
 }
 
 /** @public */
-export declare interface ResolvedStackItemConfig extends ResolvedHeaderedItemConfig {
+declare interface ResolvedStackItemConfig extends ResolvedHeaderedItemConfig {
     readonly type: 'stack';
     readonly content: ResolvedComponentItemConfig[];
     /** The index of the active item in the Stack.  Only undefined if the Stack is empty. */
@@ -1700,34 +1700,34 @@ export declare interface ResolvedStackItemConfig extends ResolvedHeaderedItemCon
 }
 
 /** @public */
-export declare namespace ResolvedStackItemConfig {
+declare namespace ResolvedStackItemConfig {
     const defaultActiveItemIndex = 0;
-    export function createCopy(original: ResolvedStackItemConfig, content?: ResolvedComponentItemConfig[]): ResolvedStackItemConfig;
-    export function copyContent(original: ResolvedComponentItemConfig[]): ResolvedComponentItemConfig[];
-    export function createDefault(): ResolvedStackItemConfig;
+    function createCopy(original: ResolvedStackItemConfig, content?: ResolvedComponentItemConfig[]): ResolvedStackItemConfig;
+    function copyContent(original: ResolvedComponentItemConfig[]): ResolvedComponentItemConfig[];
+    function createDefault(): ResolvedStackItemConfig;
 }
 
 /** @public */
-export declare type ResponsiveMode = 'none' | 'always' | 'onload';
+declare type ResponsiveMode = 'none' | 'always' | 'onload';
 
 /** @public */
-export declare namespace ResponsiveMode {
+declare namespace ResponsiveMode {
     const none = "none";
     const always = "always";
     const onload = "onload";
 }
 
 /** @public */
-export declare type RootItemConfig = RowOrColumnItemConfig | StackItemConfig | ComponentItemConfig;
+declare type RootItemConfig = RowOrColumnItemConfig | StackItemConfig | ComponentItemConfig;
 
 /** @public */
-export declare namespace RootItemConfig {
-    export function isRootItemConfig(itemConfig: ItemConfig): itemConfig is RootItemConfig;
-    export function resolve(itemConfig: RootItemConfig | undefined): ResolvedRootItemConfig | undefined;
+declare namespace RootItemConfig {
+    function isRootItemConfig(itemConfig: ItemConfig): itemConfig is RootItemConfig;
+    function resolve(itemConfig: RootItemConfig | undefined): ResolvedRootItemConfig | undefined;
 }
 
 /** @public */
-export declare class RowOrColumn extends ContentItem {
+declare class RowOrColumn extends ContentItem {
     /* Excluded from this release type: _rowOrColumnParent */
     /* Excluded from this release type: _childElementContainer */
     /* Excluded from this release type: _configType */
@@ -1790,31 +1790,31 @@ export declare class RowOrColumn extends ContentItem {
 }
 
 /** @public */
-export declare namespace RowOrColumn {
+declare namespace RowOrColumn {
     /* Excluded from this release type: getElementDimensionSize */
     /* Excluded from this release type: setElementDimensionSize */
     /* Excluded from this release type: createElement */
 }
 
 /** @public */
-export declare interface RowOrColumnItemConfig extends ItemConfig {
+declare interface RowOrColumnItemConfig extends ItemConfig {
     type: 'row' | 'column';
     content: (RowOrColumnItemConfig | StackItemConfig | ComponentItemConfig)[];
 }
 
 /** @public */
-export declare namespace RowOrColumnItemConfig {
-    export type ChildItemConfig = RowOrColumnItemConfig | StackItemConfig | ComponentItemConfig;
-    export function isChildItemConfig(itemConfig: ItemConfig): itemConfig is ChildItemConfig;
-    export function resolve(itemConfig: RowOrColumnItemConfig): ResolvedRowOrColumnItemConfig;
-    export function resolveContent(content: ChildItemConfig[] | undefined): ResolvedRowOrColumnItemConfig.ChildItemConfig[];
+declare namespace RowOrColumnItemConfig {
+    type ChildItemConfig = RowOrColumnItemConfig | StackItemConfig | ComponentItemConfig;
+    function isChildItemConfig(itemConfig: ItemConfig): itemConfig is ChildItemConfig;
+    function resolve(itemConfig: RowOrColumnItemConfig): ResolvedRowOrColumnItemConfig;
+    function resolveContent(content: ChildItemConfig[] | undefined): ResolvedRowOrColumnItemConfig.ChildItemConfig[];
 }
 
 /** @public */
-export declare type Side = 'top' | 'left' | 'right' | 'bottom';
+declare type Side = 'top' | 'left' | 'right' | 'bottom';
 
 /** @public */
-export declare namespace Side {
+declare namespace Side {
     const top = "top";
     const left = "left";
     const right = "right";
@@ -1822,7 +1822,7 @@ export declare namespace Side {
 }
 
 /** @public */
-export declare class Stack extends ComponentParentableItem {
+declare class Stack extends ComponentParentableItem {
     /* Excluded from this release type: _headerConfig */
     /* Excluded from this release type: _header */
     /* Excluded from this release type: _childElementContainer */
@@ -1894,7 +1894,7 @@ export declare class Stack extends ComponentParentableItem {
 }
 
 /** @public */
-export declare namespace Stack {
+declare namespace Stack {
     /* Excluded from this release type: Segment */
     /* Excluded from this release type: ContentAreaDimension */
     /* Excluded from this release type: ContentAreaDimensions */
@@ -1902,7 +1902,7 @@ export declare namespace Stack {
 }
 
 /** @public */
-export declare interface StackItemConfig extends HeaderedItemConfig {
+declare interface StackItemConfig extends HeaderedItemConfig {
     type: 'stack';
     content: ComponentItemConfig[];
     /** The index of the item in content which is to be active*/
@@ -1910,16 +1910,16 @@ export declare interface StackItemConfig extends HeaderedItemConfig {
 }
 
 /** @public */
-export declare namespace StackItemConfig {
-    export function resolve(itemConfig: StackItemConfig): ResolvedStackItemConfig;
-    export function resolveContent(content: ComponentItemConfig[] | undefined): ResolvedComponentItemConfig[];
+declare namespace StackItemConfig {
+    function resolve(itemConfig: StackItemConfig): ResolvedStackItemConfig;
+    function resolveContent(content: ComponentItemConfig[] | undefined): ResolvedComponentItemConfig[];
 }
 
 /**
  * Represents an individual tab within a Stack's header
  * @public
  */
-export declare class Tab {
+declare class Tab {
     /* Excluded from this release type: _layoutManager */
     /* Excluded from this release type: _componentItem */
     /* Excluded from this release type: _closeEvent */
@@ -1974,7 +1974,7 @@ export declare class Tab {
 }
 
 /** @public */
-export declare namespace Tab {
+declare namespace Tab {
     /* Excluded from this release type: CloseEvent */
     /* Excluded from this release type: FocusEvent */
     /* Excluded from this release type: DragStartEvent */
@@ -1986,4 +1986,4 @@ export declare namespace Tab {
 
 /* Excluded from this release type: WidthOrHeightPropertyName */
 
-export { }
+{ }
