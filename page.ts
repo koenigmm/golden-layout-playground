@@ -69,7 +69,7 @@ namespace Test {
                 
             };
 
-            this.goldenLayout.addComponent(cmpItemConfigTest);
+            //this.goldenLayout.addComponent(cmpItemConfigTest);
 
 
             
@@ -107,7 +107,7 @@ namespace Test {
 
 
             this.goldenLayout.loadLayout(layoutConfigForGoldenLayout);
-            this.goldenLayout.loadLayout(layoutConfig2);
+            //this.goldenLayout.loadLayout(layoutConfig2);
             console.log(this.goldenLayout);
 
             

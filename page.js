@@ -66,7 +66,7 @@ var Test;
                 componentType: "test",
                 title: "test",
             };
-            this.goldenLayout.addComponent(cmpItemConfigTest);
+            //this.goldenLayout.addComponent(cmpItemConfigTest);
             // this.goldenLayout.registerComponentFactoryFunction("test", (container: any, itemConfig: any) => {
             //     console.log(container)
             //     let el = document.createElement("h1");
@@ -94,7 +94,7 @@ var Test;
             // this.goldenLayout.registerComponentConstructor("test 3", Person);
             // this.goldenLayout.registerComponentConstructor("test 4", Person);
             this.goldenLayout.loadLayout(layoutConfigForGoldenLayout);
-            this.goldenLayout.loadLayout(layoutConfig2);
+            //this.goldenLayout.loadLayout(layoutConfig2);
             console.log(this.goldenLayout);
             let t = this.goldenLayout.getRegisteredComponentTypeNames();
             console.log(t);
